@@ -1,0 +1,2466 @@
+{
+  "version": 1,
+  "target_cell_type": "T cells CD4+",
+  "n_observed": 17,
+  "seed": 42,
+  "train_pairs": [
+    [
+      "B cells",
+      "Alvocidib"
+    ],
+    [
+      "B cells",
+      "Belinostat"
+    ],
+    [
+      "B cells",
+      "CHIR-99021"
+    ],
+    [
+      "B cells",
+      "Crizotinib"
+    ],
+    [
+      "B cells",
+      "Dabrafenib"
+    ],
+    [
+      "B cells",
+      "Dactolisib"
+    ],
+    [
+      "B cells",
+      "Foretinib"
+    ],
+    [
+      "B cells",
+      "Idelalisib"
+    ],
+    [
+      "B cells",
+      "LDN 193189"
+    ],
+    [
+      "B cells",
+      "Linagliptin"
+    ],
+    [
+      "B cells",
+      "MLN 2238"
+    ],
+    [
+      "B cells",
+      "O-Demethylated Adapalene"
+    ],
+    [
+      "B cells",
+      "Oprozomib (ONX 0912)"
+    ],
+    [
+      "B cells",
+      "Palbociclib"
+    ],
+    [
+      "B cells",
+      "Penfluridol"
+    ],
+    [
+      "B cells",
+      "Porcn Inhibitor III"
+    ],
+    [
+      "B cells",
+      "R428"
+    ],
+    [
+      "Myeloid cells",
+      "Alvocidib"
+    ],
+    [
+      "Myeloid cells",
+      "Belinostat"
+    ],
+    [
+      "Myeloid cells",
+      "CHIR-99021"
+    ],
+    [
+      "Myeloid cells",
+      "Crizotinib"
+    ],
+    [
+      "Myeloid cells",
+      "Dabrafenib"
+    ],
+    [
+      "Myeloid cells",
+      "Dactolisib"
+    ],
+    [
+      "Myeloid cells",
+      "Foretinib"
+    ],
+    [
+      "Myeloid cells",
+      "Idelalisib"
+    ],
+    [
+      "Myeloid cells",
+      "LDN 193189"
+    ],
+    [
+      "Myeloid cells",
+      "Linagliptin"
+    ],
+    [
+      "Myeloid cells",
+      "MLN 2238"
+    ],
+    [
+      "Myeloid cells",
+      "O-Demethylated Adapalene"
+    ],
+    [
+      "Myeloid cells",
+      "Oprozomib (ONX 0912)"
+    ],
+    [
+      "Myeloid cells",
+      "Palbociclib"
+    ],
+    [
+      "Myeloid cells",
+      "Penfluridol"
+    ],
+    [
+      "Myeloid cells",
+      "Porcn Inhibitor III"
+    ],
+    [
+      "Myeloid cells",
+      "R428"
+    ],
+    [
+      "NK cells",
+      "5-(9-Isopropyl-8-methyl-2-morpholino-9H-purin-6-yl)pyrimidin-2-amine"
+    ],
+    [
+      "NK cells",
+      "ABT-199 (GDC-0199)"
+    ],
+    [
+      "NK cells",
+      "ABT737"
+    ],
+    [
+      "NK cells",
+      "AMD-070 (hydrochloride)"
+    ],
+    [
+      "NK cells",
+      "AT 7867"
+    ],
+    [
+      "NK cells",
+      "AT13387"
+    ],
+    [
+      "NK cells",
+      "AVL-292"
+    ],
+    [
+      "NK cells",
+      "AZ628"
+    ],
+    [
+      "NK cells",
+      "AZD-8330"
+    ],
+    [
+      "NK cells",
+      "AZD3514"
+    ],
+    [
+      "NK cells",
+      "AZD4547"
+    ],
+    [
+      "NK cells",
+      "Alogliptin"
+    ],
+    [
+      "NK cells",
+      "Alvocidib"
+    ],
+    [
+      "NK cells",
+      "Amiodarone"
+    ],
+    [
+      "NK cells",
+      "Atorvastatin"
+    ],
+    [
+      "NK cells",
+      "Azacitidine"
+    ],
+    [
+      "NK cells",
+      "BAY 61-3606"
+    ],
+    [
+      "NK cells",
+      "BAY 87-2243"
+    ],
+    [
+      "NK cells",
+      "BI-D1870"
+    ],
+    [
+      "NK cells",
+      "BMS-265246"
+    ],
+    [
+      "NK cells",
+      "BMS-387032"
+    ],
+    [
+      "NK cells",
+      "BMS-536924"
+    ],
+    [
+      "NK cells",
+      "BMS-777607"
+    ],
+    [
+      "NK cells",
+      "BX 912"
+    ],
+    [
+      "NK cells",
+      "Belinostat"
+    ],
+    [
+      "NK cells",
+      "Bosutinib"
+    ],
+    [
+      "NK cells",
+      "Buspirone"
+    ],
+    [
+      "NK cells",
+      "CC-401"
+    ],
+    [
+      "NK cells",
+      "CEP-18770 (Delanzomib)"
+    ],
+    [
+      "NK cells",
+      "CEP-37440"
+    ],
+    [
+      "NK cells",
+      "CGM-097"
+    ],
+    [
+      "NK cells",
+      "CGP 60474"
+    ],
+    [
+      "NK cells",
+      "CHIR-99021"
+    ],
+    [
+      "NK cells",
+      "Cabozantinib"
+    ],
+    [
+      "NK cells",
+      "Canertinib"
+    ],
+    [
+      "NK cells",
+      "Ceritinib"
+    ],
+    [
+      "NK cells",
+      "Chlorpheniramine"
+    ],
+    [
+      "NK cells",
+      "Clemastine"
+    ],
+    [
+      "NK cells",
+      "Clomipramine"
+    ],
+    [
+      "NK cells",
+      "Clotrimazole"
+    ],
+    [
+      "NK cells",
+      "Colchicine"
+    ],
+    [
+      "NK cells",
+      "Colforsin"
+    ],
+    [
+      "NK cells",
+      "Crizotinib"
+    ],
+    [
+      "NK cells",
+      "Dabrafenib"
+    ],
+    [
+      "NK cells",
+      "Dactolisib"
+    ],
+    [
+      "NK cells",
+      "Dasatinib"
+    ],
+    [
+      "NK cells",
+      "Decitabine"
+    ],
+    [
+      "NK cells",
+      "Defactinib"
+    ],
+    [
+      "NK cells",
+      "Desloratadine"
+    ],
+    [
+      "NK cells",
+      "Disulfiram"
+    ],
+    [
+      "NK cells",
+      "Dovitinib"
+    ],
+    [
+      "NK cells",
+      "Doxorubicin"
+    ],
+    [
+      "NK cells",
+      "FK 866"
+    ],
+    [
+      "NK cells",
+      "Flutamide"
+    ],
+    [
+      "NK cells",
+      "Foretinib"
+    ],
+    [
+      "NK cells",
+      "GLPG0634"
+    ],
+    [
+      "NK cells",
+      "GO-6976"
+    ],
+    [
+      "NK cells",
+      "GSK-1070916"
+    ],
+    [
+      "NK cells",
+      "GSK256066"
+    ],
+    [
+      "NK cells",
+      "GW843682X"
+    ],
+    [
+      "NK cells",
+      "Ganetespib (STA-9090)"
+    ],
+    [
+      "NK cells",
+      "HMN-214"
+    ],
+    [
+      "NK cells",
+      "HYDROXYUREA"
+    ],
+    [
+      "NK cells",
+      "I-BET151"
+    ],
+    [
+      "NK cells",
+      "IKK Inhibitor VII"
+    ],
+    [
+      "NK cells",
+      "IMD-0354"
+    ],
+    [
+      "NK cells",
+      "IN1451"
+    ],
+    [
+      "NK cells",
+      "Idelalisib"
+    ],
+    [
+      "NK cells",
+      "Imatinib"
+    ],
+    [
+      "NK cells",
+      "Isoniazid"
+    ],
+    [
+      "NK cells",
+      "Ixabepilone"
+    ],
+    [
+      "NK cells",
+      "K-02288"
+    ],
+    [
+      "NK cells",
+      "Ketoconazole"
+    ],
+    [
+      "NK cells",
+      "LDN 193189"
+    ],
+    [
+      "NK cells",
+      "LY2090314"
+    ],
+    [
+      "NK cells",
+      "Lamivudine"
+    ],
+    [
+      "NK cells",
+      "Lapatinib"
+    ],
+    [
+      "NK cells",
+      "Linagliptin"
+    ],
+    [
+      "NK cells",
+      "MGCD-265"
+    ],
+    [
+      "NK cells",
+      "MK-5108"
+    ],
+    [
+      "NK cells",
+      "MLN 2238"
+    ],
+    [
+      "NK cells",
+      "Masitinib"
+    ],
+    [
+      "NK cells",
+      "Methotrexate"
+    ],
+    [
+      "NK cells",
+      "Midostaurin"
+    ],
+    [
+      "NK cells",
+      "Mometasone Furoate"
+    ],
+    [
+      "NK cells",
+      "Mubritinib (TAK 165)"
+    ],
+    [
+      "NK cells",
+      "Navitoclax"
+    ],
+    [
+      "NK cells",
+      "Nefazodone"
+    ],
+    [
+      "NK cells",
+      "Nilotinib"
+    ],
+    [
+      "NK cells",
+      "O-Demethylated Adapalene"
+    ],
+    [
+      "NK cells",
+      "OSI-930"
+    ],
+    [
+      "NK cells",
+      "Oprozomib (ONX 0912)"
+    ],
+    [
+      "NK cells",
+      "Oxybenzone"
+    ],
+    [
+      "NK cells",
+      "PD-0325901"
+    ],
+    [
+      "NK cells",
+      "PF-03814735"
+    ],
+    [
+      "NK cells",
+      "PF-04691502"
+    ],
+    [
+      "NK cells",
+      "PRT-062607"
+    ],
+    [
+      "NK cells",
+      "Palbociclib"
+    ],
+    [
+      "NK cells",
+      "Penfluridol"
+    ],
+    [
+      "NK cells",
+      "Perhexiline"
+    ],
+    [
+      "NK cells",
+      "Phenylbutazone"
+    ],
+    [
+      "NK cells",
+      "Pitavastatin Calcium"
+    ],
+    [
+      "NK cells",
+      "Pomalidomide"
+    ],
+    [
+      "NK cells",
+      "Porcn Inhibitor III"
+    ],
+    [
+      "NK cells",
+      "Prednisolone"
+    ],
+    [
+      "NK cells",
+      "Proscillaridin A;Proscillaridin-A"
+    ],
+    [
+      "NK cells",
+      "Protriptyline"
+    ],
+    [
+      "NK cells",
+      "Quizartinib"
+    ],
+    [
+      "NK cells",
+      "R428"
+    ],
+    [
+      "NK cells",
+      "RG7090"
+    ],
+    [
+      "NK cells",
+      "RG7112"
+    ],
+    [
+      "NK cells",
+      "RN-486"
+    ],
+    [
+      "NK cells",
+      "RVX-208"
+    ],
+    [
+      "NK cells",
+      "Raloxifene"
+    ],
+    [
+      "NK cells",
+      "Resminostat"
+    ],
+    [
+      "NK cells",
+      "Ricolinostat"
+    ],
+    [
+      "NK cells",
+      "Riociguat"
+    ],
+    [
+      "NK cells",
+      "Ruxolitinib"
+    ],
+    [
+      "NK cells",
+      "SB525334"
+    ],
+    [
+      "NK cells",
+      "SCH-58261"
+    ],
+    [
+      "NK cells",
+      "SLx-2119"
+    ],
+    [
+      "NK cells",
+      "STK219801"
+    ],
+    [
+      "NK cells",
+      "Saracatinib"
+    ],
+    [
+      "NK cells",
+      "Scriptaid"
+    ],
+    [
+      "NK cells",
+      "Selumetinib"
+    ],
+    [
+      "NK cells",
+      "Sgc-cbp30"
+    ],
+    [
+      "NK cells",
+      "Sunitinib"
+    ],
+    [
+      "NK cells",
+      "TGX 221"
+    ],
+    [
+      "NK cells",
+      "TIE2 Kinase Inhibitor"
+    ],
+    [
+      "NK cells",
+      "TL_HRAS26"
+    ],
+    [
+      "NK cells",
+      "TPCA-1"
+    ],
+    [
+      "NK cells",
+      "TR-14035"
+    ],
+    [
+      "NK cells",
+      "Tacalcitol"
+    ],
+    [
+      "NK cells",
+      "Tamatinib"
+    ],
+    [
+      "NK cells",
+      "Tipifarnib"
+    ],
+    [
+      "NK cells",
+      "Tivantinib"
+    ],
+    [
+      "NK cells",
+      "Tivozanib"
+    ],
+    [
+      "NK cells",
+      "Topotecan"
+    ],
+    [
+      "NK cells",
+      "Tosedostat"
+    ],
+    [
+      "NK cells",
+      "Trametinib"
+    ],
+    [
+      "NK cells",
+      "UNII-BXU45ZH6LI"
+    ],
+    [
+      "NK cells",
+      "Vandetanib"
+    ],
+    [
+      "NK cells",
+      "Vanoxerine"
+    ],
+    [
+      "NK cells",
+      "Vardenafil"
+    ],
+    [
+      "NK cells",
+      "Vorinostat"
+    ],
+    [
+      "NK cells",
+      "YK 4-279"
+    ],
+    [
+      "T cells CD4+",
+      "Alogliptin"
+    ],
+    [
+      "T cells CD4+",
+      "Amiodarone"
+    ],
+    [
+      "T cells CD4+",
+      "CC-401"
+    ],
+    [
+      "T cells CD4+",
+      "GSK256066"
+    ],
+    [
+      "T cells CD4+",
+      "LDN 193189"
+    ],
+    [
+      "T cells CD4+",
+      "LY2090314"
+    ],
+    [
+      "T cells CD4+",
+      "Navitoclax"
+    ],
+    [
+      "T cells CD4+",
+      "PF-04691502"
+    ],
+    [
+      "T cells CD4+",
+      "Pitavastatin Calcium"
+    ],
+    [
+      "T cells CD4+",
+      "Porcn Inhibitor III"
+    ],
+    [
+      "T cells CD4+",
+      "Prednisolone"
+    ],
+    [
+      "T cells CD4+",
+      "R428"
+    ],
+    [
+      "T cells CD4+",
+      "Raloxifene"
+    ],
+    [
+      "T cells CD4+",
+      "Ricolinostat"
+    ],
+    [
+      "T cells CD4+",
+      "Tamatinib"
+    ],
+    [
+      "T cells CD4+",
+      "Tivantinib"
+    ],
+    [
+      "T cells CD4+",
+      "Topotecan"
+    ],
+    [
+      "T cells CD8+",
+      "5-(9-Isopropyl-8-methyl-2-morpholino-9H-purin-6-yl)pyrimidin-2-amine"
+    ],
+    [
+      "T cells CD8+",
+      "ABT-199 (GDC-0199)"
+    ],
+    [
+      "T cells CD8+",
+      "ABT737"
+    ],
+    [
+      "T cells CD8+",
+      "AMD-070 (hydrochloride)"
+    ],
+    [
+      "T cells CD8+",
+      "AT 7867"
+    ],
+    [
+      "T cells CD8+",
+      "AT13387"
+    ],
+    [
+      "T cells CD8+",
+      "AVL-292"
+    ],
+    [
+      "T cells CD8+",
+      "AZ628"
+    ],
+    [
+      "T cells CD8+",
+      "AZD-8330"
+    ],
+    [
+      "T cells CD8+",
+      "AZD3514"
+    ],
+    [
+      "T cells CD8+",
+      "AZD4547"
+    ],
+    [
+      "T cells CD8+",
+      "Alogliptin"
+    ],
+    [
+      "T cells CD8+",
+      "Amiodarone"
+    ],
+    [
+      "T cells CD8+",
+      "Atorvastatin"
+    ],
+    [
+      "T cells CD8+",
+      "Azacitidine"
+    ],
+    [
+      "T cells CD8+",
+      "BAY 61-3606"
+    ],
+    [
+      "T cells CD8+",
+      "BAY 87-2243"
+    ],
+    [
+      "T cells CD8+",
+      "BI-D1870"
+    ],
+    [
+      "T cells CD8+",
+      "BMS-265246"
+    ],
+    [
+      "T cells CD8+",
+      "BMS-387032"
+    ],
+    [
+      "T cells CD8+",
+      "BMS-536924"
+    ],
+    [
+      "T cells CD8+",
+      "BMS-777607"
+    ],
+    [
+      "T cells CD8+",
+      "BX 912"
+    ],
+    [
+      "T cells CD8+",
+      "Belinostat"
+    ],
+    [
+      "T cells CD8+",
+      "Bosutinib"
+    ],
+    [
+      "T cells CD8+",
+      "Buspirone"
+    ],
+    [
+      "T cells CD8+",
+      "CC-401"
+    ],
+    [
+      "T cells CD8+",
+      "CEP-18770 (Delanzomib)"
+    ],
+    [
+      "T cells CD8+",
+      "CEP-37440"
+    ],
+    [
+      "T cells CD8+",
+      "CGM-097"
+    ],
+    [
+      "T cells CD8+",
+      "CHIR-99021"
+    ],
+    [
+      "T cells CD8+",
+      "Cabozantinib"
+    ],
+    [
+      "T cells CD8+",
+      "Canertinib"
+    ],
+    [
+      "T cells CD8+",
+      "Ceritinib"
+    ],
+    [
+      "T cells CD8+",
+      "Chlorpheniramine"
+    ],
+    [
+      "T cells CD8+",
+      "Clemastine"
+    ],
+    [
+      "T cells CD8+",
+      "Clomipramine"
+    ],
+    [
+      "T cells CD8+",
+      "Clotrimazole"
+    ],
+    [
+      "T cells CD8+",
+      "Colchicine"
+    ],
+    [
+      "T cells CD8+",
+      "Colforsin"
+    ],
+    [
+      "T cells CD8+",
+      "Crizotinib"
+    ],
+    [
+      "T cells CD8+",
+      "Dabrafenib"
+    ],
+    [
+      "T cells CD8+",
+      "Dactolisib"
+    ],
+    [
+      "T cells CD8+",
+      "Dasatinib"
+    ],
+    [
+      "T cells CD8+",
+      "Decitabine"
+    ],
+    [
+      "T cells CD8+",
+      "Defactinib"
+    ],
+    [
+      "T cells CD8+",
+      "Desloratadine"
+    ],
+    [
+      "T cells CD8+",
+      "Disulfiram"
+    ],
+    [
+      "T cells CD8+",
+      "Dovitinib"
+    ],
+    [
+      "T cells CD8+",
+      "Doxorubicin"
+    ],
+    [
+      "T cells CD8+",
+      "FK 866"
+    ],
+    [
+      "T cells CD8+",
+      "Flutamide"
+    ],
+    [
+      "T cells CD8+",
+      "Foretinib"
+    ],
+    [
+      "T cells CD8+",
+      "GLPG0634"
+    ],
+    [
+      "T cells CD8+",
+      "GO-6976"
+    ],
+    [
+      "T cells CD8+",
+      "GSK-1070916"
+    ],
+    [
+      "T cells CD8+",
+      "GSK256066"
+    ],
+    [
+      "T cells CD8+",
+      "GW843682X"
+    ],
+    [
+      "T cells CD8+",
+      "Ganetespib (STA-9090)"
+    ],
+    [
+      "T cells CD8+",
+      "HMN-214"
+    ],
+    [
+      "T cells CD8+",
+      "HYDROXYUREA"
+    ],
+    [
+      "T cells CD8+",
+      "I-BET151"
+    ],
+    [
+      "T cells CD8+",
+      "IKK Inhibitor VII"
+    ],
+    [
+      "T cells CD8+",
+      "IMD-0354"
+    ],
+    [
+      "T cells CD8+",
+      "IN1451"
+    ],
+    [
+      "T cells CD8+",
+      "Idelalisib"
+    ],
+    [
+      "T cells CD8+",
+      "Imatinib"
+    ],
+    [
+      "T cells CD8+",
+      "Isoniazid"
+    ],
+    [
+      "T cells CD8+",
+      "Ixabepilone"
+    ],
+    [
+      "T cells CD8+",
+      "K-02288"
+    ],
+    [
+      "T cells CD8+",
+      "Ketoconazole"
+    ],
+    [
+      "T cells CD8+",
+      "LDN 193189"
+    ],
+    [
+      "T cells CD8+",
+      "LY2090314"
+    ],
+    [
+      "T cells CD8+",
+      "Lamivudine"
+    ],
+    [
+      "T cells CD8+",
+      "Lapatinib"
+    ],
+    [
+      "T cells CD8+",
+      "Linagliptin"
+    ],
+    [
+      "T cells CD8+",
+      "MGCD-265"
+    ],
+    [
+      "T cells CD8+",
+      "MK-5108"
+    ],
+    [
+      "T cells CD8+",
+      "MLN 2238"
+    ],
+    [
+      "T cells CD8+",
+      "Masitinib"
+    ],
+    [
+      "T cells CD8+",
+      "Methotrexate"
+    ],
+    [
+      "T cells CD8+",
+      "Midostaurin"
+    ],
+    [
+      "T cells CD8+",
+      "Mometasone Furoate"
+    ],
+    [
+      "T cells CD8+",
+      "Mubritinib (TAK 165)"
+    ],
+    [
+      "T cells CD8+",
+      "Navitoclax"
+    ],
+    [
+      "T cells CD8+",
+      "Nefazodone"
+    ],
+    [
+      "T cells CD8+",
+      "Nilotinib"
+    ],
+    [
+      "T cells CD8+",
+      "O-Demethylated Adapalene"
+    ],
+    [
+      "T cells CD8+",
+      "OSI-930"
+    ],
+    [
+      "T cells CD8+",
+      "Oxybenzone"
+    ],
+    [
+      "T cells CD8+",
+      "PD-0325901"
+    ],
+    [
+      "T cells CD8+",
+      "PF-03814735"
+    ],
+    [
+      "T cells CD8+",
+      "PF-04691502"
+    ],
+    [
+      "T cells CD8+",
+      "PRT-062607"
+    ],
+    [
+      "T cells CD8+",
+      "Palbociclib"
+    ],
+    [
+      "T cells CD8+",
+      "Penfluridol"
+    ],
+    [
+      "T cells CD8+",
+      "Perhexiline"
+    ],
+    [
+      "T cells CD8+",
+      "Phenylbutazone"
+    ],
+    [
+      "T cells CD8+",
+      "Pitavastatin Calcium"
+    ],
+    [
+      "T cells CD8+",
+      "Pomalidomide"
+    ],
+    [
+      "T cells CD8+",
+      "Porcn Inhibitor III"
+    ],
+    [
+      "T cells CD8+",
+      "Prednisolone"
+    ],
+    [
+      "T cells CD8+",
+      "Proscillaridin A;Proscillaridin-A"
+    ],
+    [
+      "T cells CD8+",
+      "Protriptyline"
+    ],
+    [
+      "T cells CD8+",
+      "Quizartinib"
+    ],
+    [
+      "T cells CD8+",
+      "R428"
+    ],
+    [
+      "T cells CD8+",
+      "RG7090"
+    ],
+    [
+      "T cells CD8+",
+      "RG7112"
+    ],
+    [
+      "T cells CD8+",
+      "RN-486"
+    ],
+    [
+      "T cells CD8+",
+      "RVX-208"
+    ],
+    [
+      "T cells CD8+",
+      "Raloxifene"
+    ],
+    [
+      "T cells CD8+",
+      "Ricolinostat"
+    ],
+    [
+      "T cells CD8+",
+      "Riociguat"
+    ],
+    [
+      "T cells CD8+",
+      "Ruxolitinib"
+    ],
+    [
+      "T cells CD8+",
+      "SB525334"
+    ],
+    [
+      "T cells CD8+",
+      "SCH-58261"
+    ],
+    [
+      "T cells CD8+",
+      "SLx-2119"
+    ],
+    [
+      "T cells CD8+",
+      "STK219801"
+    ],
+    [
+      "T cells CD8+",
+      "Saracatinib"
+    ],
+    [
+      "T cells CD8+",
+      "Scriptaid"
+    ],
+    [
+      "T cells CD8+",
+      "Selumetinib"
+    ],
+    [
+      "T cells CD8+",
+      "Sgc-cbp30"
+    ],
+    [
+      "T cells CD8+",
+      "Sunitinib"
+    ],
+    [
+      "T cells CD8+",
+      "TGX 221"
+    ],
+    [
+      "T cells CD8+",
+      "TIE2 Kinase Inhibitor"
+    ],
+    [
+      "T cells CD8+",
+      "TL_HRAS26"
+    ],
+    [
+      "T cells CD8+",
+      "TPCA-1"
+    ],
+    [
+      "T cells CD8+",
+      "TR-14035"
+    ],
+    [
+      "T cells CD8+",
+      "Tacalcitol"
+    ],
+    [
+      "T cells CD8+",
+      "Tamatinib"
+    ],
+    [
+      "T cells CD8+",
+      "Tipifarnib"
+    ],
+    [
+      "T cells CD8+",
+      "Tivantinib"
+    ],
+    [
+      "T cells CD8+",
+      "Tivozanib"
+    ],
+    [
+      "T cells CD8+",
+      "Topotecan"
+    ],
+    [
+      "T cells CD8+",
+      "Tosedostat"
+    ],
+    [
+      "T cells CD8+",
+      "Trametinib"
+    ],
+    [
+      "T cells CD8+",
+      "UNII-BXU45ZH6LI"
+    ],
+    [
+      "T cells CD8+",
+      "Vandetanib"
+    ],
+    [
+      "T cells CD8+",
+      "Vanoxerine"
+    ],
+    [
+      "T cells CD8+",
+      "Vardenafil"
+    ],
+    [
+      "T cells CD8+",
+      "Vorinostat"
+    ],
+    [
+      "T cells CD8+",
+      "YK 4-279"
+    ],
+    [
+      "T regulatory cells",
+      "5-(9-Isopropyl-8-methyl-2-morpholino-9H-purin-6-yl)pyrimidin-2-amine"
+    ],
+    [
+      "T regulatory cells",
+      "ABT-199 (GDC-0199)"
+    ],
+    [
+      "T regulatory cells",
+      "ABT737"
+    ],
+    [
+      "T regulatory cells",
+      "AMD-070 (hydrochloride)"
+    ],
+    [
+      "T regulatory cells",
+      "AT 7867"
+    ],
+    [
+      "T regulatory cells",
+      "AT13387"
+    ],
+    [
+      "T regulatory cells",
+      "AVL-292"
+    ],
+    [
+      "T regulatory cells",
+      "AZ628"
+    ],
+    [
+      "T regulatory cells",
+      "AZD-8330"
+    ],
+    [
+      "T regulatory cells",
+      "AZD3514"
+    ],
+    [
+      "T regulatory cells",
+      "AZD4547"
+    ],
+    [
+      "T regulatory cells",
+      "Alogliptin"
+    ],
+    [
+      "T regulatory cells",
+      "Alvocidib"
+    ],
+    [
+      "T regulatory cells",
+      "Amiodarone"
+    ],
+    [
+      "T regulatory cells",
+      "Atorvastatin"
+    ],
+    [
+      "T regulatory cells",
+      "Azacitidine"
+    ],
+    [
+      "T regulatory cells",
+      "BAY 61-3606"
+    ],
+    [
+      "T regulatory cells",
+      "BAY 87-2243"
+    ],
+    [
+      "T regulatory cells",
+      "BI-D1870"
+    ],
+    [
+      "T regulatory cells",
+      "BMS-265246"
+    ],
+    [
+      "T regulatory cells",
+      "BMS-387032"
+    ],
+    [
+      "T regulatory cells",
+      "BMS-536924"
+    ],
+    [
+      "T regulatory cells",
+      "BMS-777607"
+    ],
+    [
+      "T regulatory cells",
+      "BX 912"
+    ],
+    [
+      "T regulatory cells",
+      "Belinostat"
+    ],
+    [
+      "T regulatory cells",
+      "Bosutinib"
+    ],
+    [
+      "T regulatory cells",
+      "Buspirone"
+    ],
+    [
+      "T regulatory cells",
+      "CC-401"
+    ],
+    [
+      "T regulatory cells",
+      "CEP-18770 (Delanzomib)"
+    ],
+    [
+      "T regulatory cells",
+      "CEP-37440"
+    ],
+    [
+      "T regulatory cells",
+      "CGM-097"
+    ],
+    [
+      "T regulatory cells",
+      "CGP 60474"
+    ],
+    [
+      "T regulatory cells",
+      "CHIR-99021"
+    ],
+    [
+      "T regulatory cells",
+      "Cabozantinib"
+    ],
+    [
+      "T regulatory cells",
+      "Canertinib"
+    ],
+    [
+      "T regulatory cells",
+      "Ceritinib"
+    ],
+    [
+      "T regulatory cells",
+      "Chlorpheniramine"
+    ],
+    [
+      "T regulatory cells",
+      "Clemastine"
+    ],
+    [
+      "T regulatory cells",
+      "Clomipramine"
+    ],
+    [
+      "T regulatory cells",
+      "Clotrimazole"
+    ],
+    [
+      "T regulatory cells",
+      "Colchicine"
+    ],
+    [
+      "T regulatory cells",
+      "Colforsin"
+    ],
+    [
+      "T regulatory cells",
+      "Crizotinib"
+    ],
+    [
+      "T regulatory cells",
+      "Dabrafenib"
+    ],
+    [
+      "T regulatory cells",
+      "Dactolisib"
+    ],
+    [
+      "T regulatory cells",
+      "Dasatinib"
+    ],
+    [
+      "T regulatory cells",
+      "Decitabine"
+    ],
+    [
+      "T regulatory cells",
+      "Defactinib"
+    ],
+    [
+      "T regulatory cells",
+      "Desloratadine"
+    ],
+    [
+      "T regulatory cells",
+      "Disulfiram"
+    ],
+    [
+      "T regulatory cells",
+      "Dovitinib"
+    ],
+    [
+      "T regulatory cells",
+      "Doxorubicin"
+    ],
+    [
+      "T regulatory cells",
+      "FK 866"
+    ],
+    [
+      "T regulatory cells",
+      "Flutamide"
+    ],
+    [
+      "T regulatory cells",
+      "Foretinib"
+    ],
+    [
+      "T regulatory cells",
+      "GLPG0634"
+    ],
+    [
+      "T regulatory cells",
+      "GO-6976"
+    ],
+    [
+      "T regulatory cells",
+      "GSK-1070916"
+    ],
+    [
+      "T regulatory cells",
+      "GSK256066"
+    ],
+    [
+      "T regulatory cells",
+      "GW843682X"
+    ],
+    [
+      "T regulatory cells",
+      "Ganetespib (STA-9090)"
+    ],
+    [
+      "T regulatory cells",
+      "HMN-214"
+    ],
+    [
+      "T regulatory cells",
+      "HYDROXYUREA"
+    ],
+    [
+      "T regulatory cells",
+      "I-BET151"
+    ],
+    [
+      "T regulatory cells",
+      "IKK Inhibitor VII"
+    ],
+    [
+      "T regulatory cells",
+      "IMD-0354"
+    ],
+    [
+      "T regulatory cells",
+      "IN1451"
+    ],
+    [
+      "T regulatory cells",
+      "Idelalisib"
+    ],
+    [
+      "T regulatory cells",
+      "Imatinib"
+    ],
+    [
+      "T regulatory cells",
+      "Isoniazid"
+    ],
+    [
+      "T regulatory cells",
+      "Ixabepilone"
+    ],
+    [
+      "T regulatory cells",
+      "K-02288"
+    ],
+    [
+      "T regulatory cells",
+      "Ketoconazole"
+    ],
+    [
+      "T regulatory cells",
+      "LDN 193189"
+    ],
+    [
+      "T regulatory cells",
+      "LY2090314"
+    ],
+    [
+      "T regulatory cells",
+      "Lamivudine"
+    ],
+    [
+      "T regulatory cells",
+      "Lapatinib"
+    ],
+    [
+      "T regulatory cells",
+      "Linagliptin"
+    ],
+    [
+      "T regulatory cells",
+      "MGCD-265"
+    ],
+    [
+      "T regulatory cells",
+      "MK-5108"
+    ],
+    [
+      "T regulatory cells",
+      "MLN 2238"
+    ],
+    [
+      "T regulatory cells",
+      "Masitinib"
+    ],
+    [
+      "T regulatory cells",
+      "Methotrexate"
+    ],
+    [
+      "T regulatory cells",
+      "Midostaurin"
+    ],
+    [
+      "T regulatory cells",
+      "Mometasone Furoate"
+    ],
+    [
+      "T regulatory cells",
+      "Mubritinib (TAK 165)"
+    ],
+    [
+      "T regulatory cells",
+      "Navitoclax"
+    ],
+    [
+      "T regulatory cells",
+      "Nefazodone"
+    ],
+    [
+      "T regulatory cells",
+      "Nilotinib"
+    ],
+    [
+      "T regulatory cells",
+      "O-Demethylated Adapalene"
+    ],
+    [
+      "T regulatory cells",
+      "OSI-930"
+    ],
+    [
+      "T regulatory cells",
+      "Oprozomib (ONX 0912)"
+    ],
+    [
+      "T regulatory cells",
+      "Oxybenzone"
+    ],
+    [
+      "T regulatory cells",
+      "PD-0325901"
+    ],
+    [
+      "T regulatory cells",
+      "PF-03814735"
+    ],
+    [
+      "T regulatory cells",
+      "PF-04691502"
+    ],
+    [
+      "T regulatory cells",
+      "PRT-062607"
+    ],
+    [
+      "T regulatory cells",
+      "Palbociclib"
+    ],
+    [
+      "T regulatory cells",
+      "Penfluridol"
+    ],
+    [
+      "T regulatory cells",
+      "Perhexiline"
+    ],
+    [
+      "T regulatory cells",
+      "Phenylbutazone"
+    ],
+    [
+      "T regulatory cells",
+      "Pitavastatin Calcium"
+    ],
+    [
+      "T regulatory cells",
+      "Pomalidomide"
+    ],
+    [
+      "T regulatory cells",
+      "Porcn Inhibitor III"
+    ],
+    [
+      "T regulatory cells",
+      "Prednisolone"
+    ],
+    [
+      "T regulatory cells",
+      "Proscillaridin A;Proscillaridin-A"
+    ],
+    [
+      "T regulatory cells",
+      "Protriptyline"
+    ],
+    [
+      "T regulatory cells",
+      "Quizartinib"
+    ],
+    [
+      "T regulatory cells",
+      "R428"
+    ],
+    [
+      "T regulatory cells",
+      "RG7090"
+    ],
+    [
+      "T regulatory cells",
+      "RG7112"
+    ],
+    [
+      "T regulatory cells",
+      "RN-486"
+    ],
+    [
+      "T regulatory cells",
+      "RVX-208"
+    ],
+    [
+      "T regulatory cells",
+      "Raloxifene"
+    ],
+    [
+      "T regulatory cells",
+      "Resminostat"
+    ],
+    [
+      "T regulatory cells",
+      "Ricolinostat"
+    ],
+    [
+      "T regulatory cells",
+      "Riociguat"
+    ],
+    [
+      "T regulatory cells",
+      "Ruxolitinib"
+    ],
+    [
+      "T regulatory cells",
+      "SB525334"
+    ],
+    [
+      "T regulatory cells",
+      "SCH-58261"
+    ],
+    [
+      "T regulatory cells",
+      "SLx-2119"
+    ],
+    [
+      "T regulatory cells",
+      "STK219801"
+    ],
+    [
+      "T regulatory cells",
+      "Saracatinib"
+    ],
+    [
+      "T regulatory cells",
+      "Scriptaid"
+    ],
+    [
+      "T regulatory cells",
+      "Selumetinib"
+    ],
+    [
+      "T regulatory cells",
+      "Sgc-cbp30"
+    ],
+    [
+      "T regulatory cells",
+      "Sunitinib"
+    ],
+    [
+      "T regulatory cells",
+      "TGX 221"
+    ],
+    [
+      "T regulatory cells",
+      "TIE2 Kinase Inhibitor"
+    ],
+    [
+      "T regulatory cells",
+      "TL_HRAS26"
+    ],
+    [
+      "T regulatory cells",
+      "TPCA-1"
+    ],
+    [
+      "T regulatory cells",
+      "TR-14035"
+    ],
+    [
+      "T regulatory cells",
+      "Tacalcitol"
+    ],
+    [
+      "T regulatory cells",
+      "Tamatinib"
+    ],
+    [
+      "T regulatory cells",
+      "Tipifarnib"
+    ],
+    [
+      "T regulatory cells",
+      "Tivantinib"
+    ],
+    [
+      "T regulatory cells",
+      "Tivozanib"
+    ],
+    [
+      "T regulatory cells",
+      "Topotecan"
+    ],
+    [
+      "T regulatory cells",
+      "Tosedostat"
+    ],
+    [
+      "T regulatory cells",
+      "Trametinib"
+    ],
+    [
+      "T regulatory cells",
+      "UNII-BXU45ZH6LI"
+    ],
+    [
+      "T regulatory cells",
+      "Vandetanib"
+    ],
+    [
+      "T regulatory cells",
+      "Vanoxerine"
+    ],
+    [
+      "T regulatory cells",
+      "Vardenafil"
+    ],
+    [
+      "T regulatory cells",
+      "Vorinostat"
+    ],
+    [
+      "T regulatory cells",
+      "YK 4-279"
+    ]
+  ],
+  "validation_pairs": [
+    [
+      "T cells CD4+",
+      "5-(9-Isopropyl-8-methyl-2-morpholino-9H-purin-6-yl)pyrimidin-2-amine"
+    ],
+    [
+      "T cells CD4+",
+      "ABT-199 (GDC-0199)"
+    ],
+    [
+      "T cells CD4+",
+      "ABT737"
+    ],
+    [
+      "T cells CD4+",
+      "AMD-070 (hydrochloride)"
+    ],
+    [
+      "T cells CD4+",
+      "AT 7867"
+    ],
+    [
+      "T cells CD4+",
+      "AT13387"
+    ],
+    [
+      "T cells CD4+",
+      "AVL-292"
+    ],
+    [
+      "T cells CD4+",
+      "AZ628"
+    ],
+    [
+      "T cells CD4+",
+      "AZD-8330"
+    ],
+    [
+      "T cells CD4+",
+      "AZD3514"
+    ],
+    [
+      "T cells CD4+",
+      "AZD4547"
+    ],
+    [
+      "T cells CD4+",
+      "Alvocidib"
+    ],
+    [
+      "T cells CD4+",
+      "Atorvastatin"
+    ],
+    [
+      "T cells CD4+",
+      "Azacitidine"
+    ],
+    [
+      "T cells CD4+",
+      "BAY 61-3606"
+    ],
+    [
+      "T cells CD4+",
+      "BAY 87-2243"
+    ],
+    [
+      "T cells CD4+",
+      "BI-D1870"
+    ],
+    [
+      "T cells CD4+",
+      "BMS-265246"
+    ],
+    [
+      "T cells CD4+",
+      "BMS-387032"
+    ],
+    [
+      "T cells CD4+",
+      "BMS-536924"
+    ],
+    [
+      "T cells CD4+",
+      "BMS-777607"
+    ],
+    [
+      "T cells CD4+",
+      "BX 912"
+    ],
+    [
+      "T cells CD4+",
+      "Belinostat"
+    ],
+    [
+      "T cells CD4+",
+      "Bosutinib"
+    ],
+    [
+      "T cells CD4+",
+      "Buspirone"
+    ],
+    [
+      "T cells CD4+",
+      "CEP-18770 (Delanzomib)"
+    ],
+    [
+      "T cells CD4+",
+      "CEP-37440"
+    ],
+    [
+      "T cells CD4+",
+      "CGM-097"
+    ],
+    [
+      "T cells CD4+",
+      "CGP 60474"
+    ],
+    [
+      "T cells CD4+",
+      "CHIR-99021"
+    ],
+    [
+      "T cells CD4+",
+      "Cabozantinib"
+    ],
+    [
+      "T cells CD4+",
+      "Canertinib"
+    ],
+    [
+      "T cells CD4+",
+      "Ceritinib"
+    ],
+    [
+      "T cells CD4+",
+      "Chlorpheniramine"
+    ],
+    [
+      "T cells CD4+",
+      "Clemastine"
+    ],
+    [
+      "T cells CD4+",
+      "Clomipramine"
+    ],
+    [
+      "T cells CD4+",
+      "Clotrimazole"
+    ],
+    [
+      "T cells CD4+",
+      "Colchicine"
+    ],
+    [
+      "T cells CD4+",
+      "Colforsin"
+    ],
+    [
+      "T cells CD4+",
+      "Crizotinib"
+    ],
+    [
+      "T cells CD4+",
+      "Dabrafenib"
+    ],
+    [
+      "T cells CD4+",
+      "Dactolisib"
+    ],
+    [
+      "T cells CD4+",
+      "Dasatinib"
+    ],
+    [
+      "T cells CD4+",
+      "Decitabine"
+    ],
+    [
+      "T cells CD4+",
+      "Defactinib"
+    ],
+    [
+      "T cells CD4+",
+      "Desloratadine"
+    ],
+    [
+      "T cells CD4+",
+      "Disulfiram"
+    ],
+    [
+      "T cells CD4+",
+      "Dovitinib"
+    ],
+    [
+      "T cells CD4+",
+      "Doxorubicin"
+    ],
+    [
+      "T cells CD4+",
+      "FK 866"
+    ],
+    [
+      "T cells CD4+",
+      "Flutamide"
+    ],
+    [
+      "T cells CD4+",
+      "Foretinib"
+    ],
+    [
+      "T cells CD4+",
+      "GLPG0634"
+    ],
+    [
+      "T cells CD4+",
+      "GO-6976"
+    ],
+    [
+      "T cells CD4+",
+      "GSK-1070916"
+    ],
+    [
+      "T cells CD4+",
+      "GW843682X"
+    ],
+    [
+      "T cells CD4+",
+      "Ganetespib (STA-9090)"
+    ],
+    [
+      "T cells CD4+",
+      "HMN-214"
+    ],
+    [
+      "T cells CD4+",
+      "HYDROXYUREA"
+    ],
+    [
+      "T cells CD4+",
+      "I-BET151"
+    ],
+    [
+      "T cells CD4+",
+      "IKK Inhibitor VII"
+    ],
+    [
+      "T cells CD4+",
+      "IMD-0354"
+    ],
+    [
+      "T cells CD4+",
+      "IN1451"
+    ],
+    [
+      "T cells CD4+",
+      "Idelalisib"
+    ],
+    [
+      "T cells CD4+",
+      "Imatinib"
+    ],
+    [
+      "T cells CD4+",
+      "Isoniazid"
+    ],
+    [
+      "T cells CD4+",
+      "Ixabepilone"
+    ],
+    [
+      "T cells CD4+",
+      "K-02288"
+    ],
+    [
+      "T cells CD4+",
+      "Ketoconazole"
+    ],
+    [
+      "T cells CD4+",
+      "Lamivudine"
+    ],
+    [
+      "T cells CD4+",
+      "Lapatinib"
+    ],
+    [
+      "T cells CD4+",
+      "Linagliptin"
+    ],
+    [
+      "T cells CD4+",
+      "MGCD-265"
+    ],
+    [
+      "T cells CD4+",
+      "MK-5108"
+    ],
+    [
+      "T cells CD4+",
+      "MLN 2238"
+    ],
+    [
+      "T cells CD4+",
+      "Masitinib"
+    ],
+    [
+      "T cells CD4+",
+      "Methotrexate"
+    ],
+    [
+      "T cells CD4+",
+      "Midostaurin"
+    ],
+    [
+      "T cells CD4+",
+      "Mometasone Furoate"
+    ],
+    [
+      "T cells CD4+",
+      "Mubritinib (TAK 165)"
+    ],
+    [
+      "T cells CD4+",
+      "Nefazodone"
+    ],
+    [
+      "T cells CD4+",
+      "Nilotinib"
+    ],
+    [
+      "T cells CD4+",
+      "O-Demethylated Adapalene"
+    ],
+    [
+      "T cells CD4+",
+      "OSI-930"
+    ],
+    [
+      "T cells CD4+",
+      "Oprozomib (ONX 0912)"
+    ],
+    [
+      "T cells CD4+",
+      "Oxybenzone"
+    ],
+    [
+      "T cells CD4+",
+      "PD-0325901"
+    ],
+    [
+      "T cells CD4+",
+      "PF-03814735"
+    ],
+    [
+      "T cells CD4+",
+      "PRT-062607"
+    ],
+    [
+      "T cells CD4+",
+      "Palbociclib"
+    ],
+    [
+      "T cells CD4+",
+      "Penfluridol"
+    ],
+    [
+      "T cells CD4+",
+      "Perhexiline"
+    ],
+    [
+      "T cells CD4+",
+      "Phenylbutazone"
+    ],
+    [
+      "T cells CD4+",
+      "Pomalidomide"
+    ],
+    [
+      "T cells CD4+",
+      "Proscillaridin A;Proscillaridin-A"
+    ],
+    [
+      "T cells CD4+",
+      "Protriptyline"
+    ],
+    [
+      "T cells CD4+",
+      "Quizartinib"
+    ],
+    [
+      "T cells CD4+",
+      "RG7090"
+    ],
+    [
+      "T cells CD4+",
+      "RG7112"
+    ],
+    [
+      "T cells CD4+",
+      "RN-486"
+    ],
+    [
+      "T cells CD4+",
+      "RVX-208"
+    ],
+    [
+      "T cells CD4+",
+      "Resminostat"
+    ],
+    [
+      "T cells CD4+",
+      "Riociguat"
+    ],
+    [
+      "T cells CD4+",
+      "Ruxolitinib"
+    ],
+    [
+      "T cells CD4+",
+      "SB525334"
+    ],
+    [
+      "T cells CD4+",
+      "SCH-58261"
+    ],
+    [
+      "T cells CD4+",
+      "SLx-2119"
+    ],
+    [
+      "T cells CD4+",
+      "STK219801"
+    ],
+    [
+      "T cells CD4+",
+      "Saracatinib"
+    ],
+    [
+      "T cells CD4+",
+      "Scriptaid"
+    ],
+    [
+      "T cells CD4+",
+      "Selumetinib"
+    ],
+    [
+      "T cells CD4+",
+      "Sgc-cbp30"
+    ],
+    [
+      "T cells CD4+",
+      "Sunitinib"
+    ],
+    [
+      "T cells CD4+",
+      "TGX 221"
+    ],
+    [
+      "T cells CD4+",
+      "TIE2 Kinase Inhibitor"
+    ],
+    [
+      "T cells CD4+",
+      "TL_HRAS26"
+    ],
+    [
+      "T cells CD4+",
+      "TPCA-1"
+    ],
+    [
+      "T cells CD4+",
+      "TR-14035"
+    ],
+    [
+      "T cells CD4+",
+      "Tacalcitol"
+    ],
+    [
+      "T cells CD4+",
+      "Tipifarnib"
+    ],
+    [
+      "T cells CD4+",
+      "Tivozanib"
+    ],
+    [
+      "T cells CD4+",
+      "Tosedostat"
+    ],
+    [
+      "T cells CD4+",
+      "Trametinib"
+    ],
+    [
+      "T cells CD4+",
+      "UNII-BXU45ZH6LI"
+    ],
+    [
+      "T cells CD4+",
+      "Vandetanib"
+    ],
+    [
+      "T cells CD4+",
+      "Vanoxerine"
+    ],
+    [
+      "T cells CD4+",
+      "Vardenafil"
+    ],
+    [
+      "T cells CD4+",
+      "Vorinostat"
+    ],
+    [
+      "T cells CD4+",
+      "YK 4-279"
+    ]
+  ]
+}
