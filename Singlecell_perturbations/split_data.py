@@ -13,7 +13,7 @@ import pandas as pd
 PAIR_COLUMNS = ["cell_type", "sm_name"]
 METADATA_COLUMNS = ["cell_type", "sm_name", "sm_lincs_id", "SMILES", "control"]
 
-
+## make sure if the required pair columns are present and valid
 def _pairs(data):
     missing = set(PAIR_COLUMNS) - set(data.columns)
     if missing:
@@ -27,7 +27,7 @@ def _pairs(data):
         raise ValueError("Expected one DE row per (cell_type, sm_name) pair.")
     return sorted(pairs.itertuples(index=False, name=None))
 
-
+## validate splits for training and validation
 def _validate_split(data, manifest):
     all_pairs = set(_pairs(data))
     target = manifest["target_cell_type"]
@@ -35,12 +35,14 @@ def _validate_split(data, manifest):
     groups = []
     for name in ("train_pairs", "validation_pairs"):
         records = manifest[name]
+        ## validate the format and structure of the records
         if not isinstance(records, list) or not all(
             isinstance(pair, list) and len(pair) == 2
             and all(isinstance(x, str) for x in pair) for pair in records
         ):
             raise ValueError(f"Invalid {name} records.")
         group = set(map(tuple, records))
+        ## validate that there are no duplicate pairs in the current group
         if len(group) != len(records):
             raise ValueError(f"Duplicate pairs in {name}.")
         groups.append(group)
@@ -58,7 +60,7 @@ def _validate_split(data, manifest):
     if unseen:
         raise ValueError(f"Validation contains drugs absent from training: {unseen}")
 
-
+## create splits for training and validation, 
 def make_split(data, target_cell_type="T cells CD4+", n_observed=17, seed=42):
     """Keep n_observed target pairs, hold out the rest, retain all other cells.
 
