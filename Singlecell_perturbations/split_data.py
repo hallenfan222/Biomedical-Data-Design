@@ -30,8 +30,6 @@ def _pairs(data):
 
 def _validate_split(data, manifest):
     all_pairs = set(_pairs(data))
-    if manifest.get("version") != 1:
-        raise ValueError("Unsupported split manifest version.")
     target = manifest["target_cell_type"]
     keep = manifest["n_observed"]
     groups = []
