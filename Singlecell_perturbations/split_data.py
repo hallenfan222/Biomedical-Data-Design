@@ -1,6 +1,6 @@
 """Reproducible pseudo-target splits for cell-type/drug DE prediction.
 
-Only pair identities and split settings are saved; no expression data are copied.
+Save pair identities as JSON and export matching training/validation data files.
 Dependencies: numpy, pandas, and pyarrow (for reading the source parquet file).
 """
 
@@ -70,7 +70,7 @@ def _validate_split(data, manifest):
         
 ## create splits for training and validation, 
 def make_split(data, validation_fraction=0.2, seed=42):
-    """随机拆分每种 cell type 的组合，约 80% 训练、20% 验证。"""
+    """Split data randomly, 80% for training data, and 20% for validation data"""
     pairs = _pairs(data)
     rng = np.random.default_rng(seed)
 
@@ -109,8 +109,16 @@ def make_split(data, validation_fraction=0.2, seed=42):
     return manifest
 
 
-def load_or_create_split(data, path, validation_fraction=0.2, seed=42):
-    """读取已有划分；如果文件不存在，就生成并保存一份。"""
+def load_or_create_split(data, path, validation_fraction=0.2, seed=42,
+                         export_format="parquet"):
+    """Reuse/create JSON and export full rows beside it (default: parquet).
+
+    Use export_format="csv" for CSV, or None for JSON only. Exports include
+    metadata and all genes, in manifest order, without an extra index column.
+    Repeated calls refresh the exported files from the same saved split.
+    """
+    if export_format not in ("parquet", "csv", None):
+        raise ValueError("export_format must be 'parquet', 'csv', or None.")
     path = Path(path)
 
     if path.exists():
@@ -129,6 +137,8 @@ def load_or_create_split(data, path, validation_fraction=0.2, seed=42):
             )
 
         _validate_split(data, manifest)
+        if export_format is not None:
+            export_split(data, manifest, path, export_format)
         return manifest
 
     manifest = make_split(
@@ -143,6 +153,8 @@ def load_or_create_split(data, path, validation_fraction=0.2, seed=42):
         json.dump(manifest, stream, indent=2, ensure_ascii=False)
         stream.write("\n")
 
+    if export_format is not None:
+        export_split(data, manifest, path, export_format)
     return manifest
 
 
@@ -161,6 +173,28 @@ def apply_split(data, manifest):
         data.iloc[[positions[tuple(p)] for p in manifest[key]]].copy()
         for key in ("train_pairs", "validation_pairs")
     )
+
+
+def export_split(data, manifest, manifest_path, file_format="parquet"):
+    """Export full split data; return paths keyed by 'train' and 'validation'.
+
+    Example: split.json -> split_train.parquet, split_validation.parquet.
+    CSV does not preserve pandas dtypes; use parquet for lossless round trips.
+    """
+    if file_format not in ("parquet", "csv"):
+        raise ValueError("file_format must be 'parquet' or 'csv'.")
+    train_df, val_df = apply_split(data, manifest)
+    manifest_path = Path(manifest_path)
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    paths = {}
+    for name, frame in (("train", train_df), ("validation", val_df)):
+        output = manifest_path.with_name(f"{manifest_path.stem}_{name}.{file_format}")
+        if file_format == "parquet":
+            frame.to_parquet(output, index=False)
+        else:
+            frame.to_csv(output, index=False)
+        paths[name] = output
+    return paths
 
 
 def get_gene_columns(data):

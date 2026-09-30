@@ -1,2 +1,6 @@
 # Kaggle dataset
 open-problems-single-cell-perturbations/
+
+# Generated split data (keep the small JSON manifests in Git)
+/splits/*.parquet
+/splits/*.csv
