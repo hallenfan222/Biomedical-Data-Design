@@ -30,36 +30,44 @@ def _pairs(data):
 ## validate splits for training and validation
 def _validate_split(data, manifest):
     all_pairs = set(_pairs(data))
-    target = manifest["target_cell_type"]
-    keep = manifest["n_observed"]
-    groups = []
-    for name in ("train_pairs", "validation_pairs"):
-        records = manifest[name]
-        ## validate the format and structure of the records
-        if not isinstance(records, list) or not all(
-            isinstance(pair, list) and len(pair) == 2
-            and all(isinstance(x, str) for x in pair) for pair in records
-        ):
-            raise ValueError(f"Invalid {name} records.")
-        group = set(map(tuple, records))
-        ## validate that there are no duplicate pairs in the current group
-        if len(group) != len(records):
-            raise ValueError(f"Duplicate pairs in {name}.")
-        groups.append(group)
-    train, validation = groups
-    if not train or not validation or train & validation:
-        raise ValueError("Train and validation must be nonempty and disjoint.")
-    if train | validation != all_pairs:
-        raise ValueError("Saved split does not match the current dataset pairs.")
-    if any(cell != target for cell, _ in validation):
-        raise ValueError("Only the pseudo-target cell type may be held out.")
-    if sum(cell == target for cell, _ in train) != keep:
-        raise ValueError("Incorrect number of observed pseudo-target pairs.")
-    training_drugs = {drug for _, drug in train}
-    unseen = sorted({drug for _, drug in validation} - training_drugs)
-    if unseen:
-        raise ValueError(f"Validation contains drugs absent from training: {unseen}")
+    train = set(map(tuple, manifest["train_pairs"]))
+    validation = set(map(tuple, manifest["validation_pairs"]))
 
+    if not train or not validation:
+        raise ValueError("Train and validation must both contain pairs.")
+
+    if train & validation:
+        raise ValueError("A pair appears in both train and validation.")
+
+    if train | validation != all_pairs:
+        raise ValueError("Train and validation do not match the current data.")
+
+    fraction = manifest["validation_fraction"]
+    if not 0 < fraction < 1:
+        raise ValueError("validation_fraction must be between 0 and 1.")
+
+    for cell_type in data["cell_type"].unique():
+        cell_pairs = {
+            pair for pair in all_pairs
+            if pair[0] == cell_type
+        }
+        val_pairs = {
+            pair for pair in validation
+            if pair[0] == cell_type
+        }
+
+        expected = max(1, int(np.ceil(len(cell_pairs) * fraction)))
+
+        if len(val_pairs) != expected:
+            raise ValueError(
+                f"Incorrect validation size for {cell_type}."
+            )
+
+        if len(cell_pairs - val_pairs) == 0:
+            raise ValueError(
+                f"No training pairs remain for {cell_type}."
+            )
+        
 ## create splits for training and validation, 
 def make_split(data, validation_fraction=0.2, seed=42):
     """随机拆分每种 cell type 的组合，约 80% 训练、20% 验证。"""
@@ -74,7 +82,7 @@ def make_split(data, validation_fraction=0.2, seed=42):
     for cell_type in cell_types:
         cell_pairs = [pair for pair in pairs if pair[0] == cell_type]
 
-        n_validation = max(1, round(len(cell_pairs) * validation_fraction))
+        n_validation = max(1, int(np.ceil(len(cell_pairs) * validation_fraction)))
         if n_validation >= len(cell_pairs):
             raise ValueError(
                 f"Not enough pairs for cell type {cell_type!r} "
