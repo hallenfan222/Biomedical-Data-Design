@@ -75,15 +75,10 @@ def fit_predict(X_train, y_train, X_predict, n_components=50, alpha=10.0):
 
 
 def mrrmse(y_true, y_pred):
-    """Mean row-wise RMSE divided by each row's true RMS."""
-    y_true = _as_frame(y_true).to_numpy(dtype=float)
-    y_pred = _as_frame(y_pred).to_numpy(dtype=float)
-    if y_true.shape != y_pred.shape:
-        raise ValueError(f"Shape mismatch: y_true {y_true.shape}, y_pred {y_pred.shape}")
-    if not np.isfinite(y_true).all() or not np.isfinite(y_pred).all():
-        raise ValueError("Metric inputs contain missing or infinite values.")
+    y_true = np.asarray(y_true, dtype=float)
+    y_pred = np.asarray(y_pred, dtype=float)
 
-    row_rmse = np.sqrt(np.mean((y_true - y_pred) ** 2, axis=1))
-    row_rms = np.sqrt(np.mean(y_true ** 2, axis=1))
-    row_rms = np.maximum(row_rms, np.finfo(float).eps)
-    return float(np.mean(row_rmse / row_rms))
+    if y_true.shape != y_pred.shape:
+        raise ValueError("y_true and y_pred must have the same shape.")
+
+    return float(np.sqrt(np.mean((y_true - y_pred) ** 2, axis=1)).mean())

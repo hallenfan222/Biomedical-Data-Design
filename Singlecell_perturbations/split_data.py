@@ -61,58 +61,80 @@ def _validate_split(data, manifest):
         raise ValueError(f"Validation contains drugs absent from training: {unseen}")
 
 ## create splits for training and validation, 
-def make_split(data, target_cell_type="T cells CD4+", n_observed=17, seed=42):
-    """Keep n_observed target pairs, hold out the rest, retain all other cells.
-
-    Pair sorting makes the selection independent of dataframe row order.
-    Sampling includes control rows, matching the initial all-pairs protocol.
-    """
+def make_split(data, validation_fraction=0.2, seed=42):
+    """随机拆分每种 cell type 的组合，约 80% 训练、20% 验证。"""
     pairs = _pairs(data)
-    target_pairs = [p for p in pairs if p[0] == target_cell_type]
-    if not target_pairs:
-        raise ValueError(f"Unknown target cell type: {target_cell_type!r}")
-    if isinstance(n_observed, bool) or not isinstance(n_observed, int):
-        raise ValueError("n_observed must be an integer.")
-    if not 1 <= n_observed < len(target_pairs):
-        raise ValueError(f"n_observed must be between 1 and {len(target_pairs) - 1}.")
-    if isinstance(seed, bool) or not isinstance(seed, int) or seed < 0:
-        raise ValueError("seed must be a nonnegative integer.")
-    selected = np.random.default_rng(seed).choice(
-        len(target_pairs), size=n_observed, replace=False
-    )
-    observed = {target_pairs[i] for i in selected}
-    validation = set(target_pairs) - observed
+    rng = np.random.default_rng(seed)
+
+    train_pairs = []
+    validation_pairs = []
+
+    cell_types = sorted({cell_type for cell_type, _ in pairs})
+
+    for cell_type in cell_types:
+        cell_pairs = [pair for pair in pairs if pair[0] == cell_type]
+
+        n_validation = max(1, round(len(cell_pairs) * validation_fraction))
+        if n_validation >= len(cell_pairs):
+            raise ValueError(
+                f"Not enough pairs for cell type {cell_type!r} "
+                "to create both training and validation data."
+            )
+
+        selected = rng.choice(len(cell_pairs), size=n_validation, replace=False)
+        validation_indices = set(selected)
+
+        for i, pair in enumerate(cell_pairs):
+            if i in validation_indices:
+                validation_pairs.append(pair)
+            else:
+                train_pairs.append(pair)
+
     manifest = {
-        "version": 1,
-        "target_cell_type": target_cell_type,
-        "n_observed": n_observed,
+        "validation_fraction": validation_fraction,
         "seed": seed,
-        "train_pairs": [list(p) for p in pairs if p not in validation],
-        "validation_pairs": [list(p) for p in pairs if p in validation],
+        "train_pairs": [list(pair) for pair in train_pairs],
+        "validation_pairs": [list(pair) for pair in validation_pairs],
     }
+
     _validate_split(data, manifest)
     return manifest
 
 
-def load_or_create_split(data, path, target_cell_type="T cells CD4+", n_observed=17, seed=42):
-    """Reuse saved pair IDs; reject changed settings/data instead of overwriting.
-
-    Choose a different path when intentionally creating another experiment.
-    """
+def load_or_create_split(data, path, validation_fraction=0.2, seed=42):
+    """读取已有划分；如果文件不存在，就生成并保存一份。"""
     path = Path(path)
+
     if path.exists():
         manifest = json.loads(path.read_text(encoding="utf-8"))
-        expected = (target_cell_type, n_observed, seed)
-        actual = tuple(manifest.get(k) for k in ("target_cell_type", "n_observed", "seed"))
-        if actual != expected:
-            raise ValueError("Saved split settings differ. Use a new manifest path.")
+
+        if manifest.get("validation_fraction") != validation_fraction:
+            raise ValueError(
+                "Saved split uses a different validation fraction. "
+                "Use a new manifest path."
+            )
+
+        if manifest.get("seed") != seed:
+            raise ValueError(
+                "Saved split uses a different seed. "
+                "Use a new manifest path."
+            )
+
         _validate_split(data, manifest)
         return manifest
-    manifest = make_split(data, target_cell_type, n_observed, seed)
+
+    manifest = make_split(
+        data,
+        validation_fraction=validation_fraction,
+        seed=seed,
+    )
+
     path.parent.mkdir(parents=True, exist_ok=True)
+
     with path.open("x", encoding="utf-8") as stream:
         json.dump(manifest, stream, indent=2, ensure_ascii=False)
         stream.write("\n")
+
     return manifest
 
 
