@@ -18,7 +18,7 @@ def _as_frame(values):
     return values.copy() if isinstance(values, pd.DataFrame) else pd.DataFrame(values)
 
 
-def fit_predict(X_train, y_train, X_predict, n_components=50, alpha=10.0):
+def fit_predict(X_train, y_train, X_predict, n_components=160, alpha=3.5):
     """Fit PCA + multi-output Ridge and predict gene-level DE values.
 
     X inputs must include categorical columns cell_type and sm_name.
