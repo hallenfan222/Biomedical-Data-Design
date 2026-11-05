@@ -27,174 +27,48 @@ def _pairs(data):
         raise ValueError("Expected one DE row per (cell_type, sm_name) pair.")
     return sorted(pairs.itertuples(index=False, name=None))
 
-## validate splits for training and validation
-def _validate_split(data, manifest):
-    all_pairs = set(_pairs(data))
-    train = set(map(tuple, manifest["train_pairs"]))
-    validation = set(map(tuple, manifest["validation_pairs"]))
+# Sparse-cell folds following XGBoost.ipynb.
+SOURCE_CELLS = ["NK cells", "T cells CD4+", "T cells CD8+", "T regulatory cells"]
 
-    if not train or not validation:
-        raise ValueError("Train and validation must both contain pairs.")
-
-    if train & validation:
-        raise ValueError("A pair appears in both train and validation.")
-
-    if train | validation != all_pairs:
-        raise ValueError("Train and validation do not match the current data.")
-
-    fraction = manifest["validation_fraction"]
-    if not 0 < fraction < 1:
-        raise ValueError("validation_fraction must be between 0 and 1.")
-
-    for cell_type in data["cell_type"].unique():
-        cell_pairs = {
-            pair for pair in all_pairs
-            if pair[0] == cell_type
+def make_sparse_splits(data):
+    _pairs(data)
+    anchors_b = set(data.loc[data.cell_type.eq("B cells") & ~data.control, "sm_name"])
+    anchors_m = set(data.loc[data.cell_type.eq("Myeloid cells") & ~data.control, "sm_name"])
+    assert anchors_b == anchors_m and len(anchors_b) == 15
+    folds = {}
+    for target_cell in SOURCE_CELLS:
+        is_target = data.cell_type.eq(target_cell)
+        held_out = is_target & ~data.control & ~data.sm_name.isin(anchors_b)
+        train = data.loc[~held_out]
+        validation = data.loc[held_out]
+        target_anchors = data.loc[is_target & ~data.control & data.sm_name.isin(anchors_b), "sm_name"]
+        assert len(target_anchors) in (13, 15)
+        assert len(validation) > 100 and not validation.control.any()
+        assert set(validation.sm_name).issubset(set(train.sm_name))
+        assert len(train) + len(validation) == len(data)
+        assert len(train.loc[train.cell_type.eq(target_cell) & ~train.control]) == len(target_anchors)
+        folds[target_cell] = {
+            "target_cell": target_cell,
+            "anchor_drugs": sorted(anchors_b),
+            "train_pairs": train[PAIR_COLUMNS].values.tolist(),
+            "validation_pairs": validation[PAIR_COLUMNS].values.tolist(),
         }
-        val_pairs = {
-            pair for pair in validation
-            if pair[0] == cell_type
-        }
+    return folds
 
-        expected = max(1, int(np.ceil(len(cell_pairs) * fraction)))
-
-        if len(val_pairs) != expected:
-            raise ValueError(
-                f"Incorrect validation size for {cell_type}."
-            )
-
-        if len(cell_pairs - val_pairs) == 0:
-            raise ValueError(
-                f"No training pairs remain for {cell_type}."
-            )
-        
-## create splits for training and validation, 
-def make_split(data, validation_fraction=0.2, seed=42):
-    """Split data randomly, 80% for training data, and 20% for validation data"""
-    pairs = _pairs(data)
-    rng = np.random.default_rng(seed)
-
-    train_pairs = []
-    validation_pairs = []
-
-    cell_types = sorted({cell_type for cell_type, _ in pairs})
-
-    for cell_type in cell_types:
-        cell_pairs = [pair for pair in pairs if pair[0] == cell_type]
-
-        n_validation = max(1, int(np.ceil(len(cell_pairs) * validation_fraction)))
-        if n_validation >= len(cell_pairs):
-            raise ValueError(
-                f"Not enough pairs for cell type {cell_type!r} "
-                "to create both training and validation data."
-            )
-
-        selected = rng.choice(len(cell_pairs), size=n_validation, replace=False)
-        validation_indices = set(selected)
-
-        for i, pair in enumerate(cell_pairs):
-            if i in validation_indices:
-                validation_pairs.append(pair)
-            else:
-                train_pairs.append(pair)
-
-    manifest = {
-        "validation_fraction": validation_fraction,
-        "seed": seed,
-        "train_pairs": [list(pair) for pair in train_pairs],
-        "validation_pairs": [list(pair) for pair in validation_pairs],
-    }
-
-    _validate_split(data, manifest)
-    return manifest
-
-
-def load_or_create_split(data, path, validation_fraction=0.2, seed=42,
-                         export_format="parquet"):
-    """Reuse/create JSON and export full rows beside it (default: parquet).
-
-    Use export_format="csv" for CSV, or None for JSON only. Exports include
-    metadata and all genes, in manifest order, without an extra index column.
-    Repeated calls refresh the exported files from the same saved split.
-    """
-    if export_format not in ("parquet", "csv", None):
-        raise ValueError("export_format must be 'parquet', 'csv', or None.")
-    path = Path(path)
-
-    if path.exists():
-        manifest = json.loads(path.read_text(encoding="utf-8"))
-
-        if manifest.get("validation_fraction") != validation_fraction:
-            raise ValueError(
-                "Saved split uses a different validation fraction. "
-                "Use a new manifest path."
-            )
-
-        if manifest.get("seed") != seed:
-            raise ValueError(
-                "Saved split uses a different seed. "
-                "Use a new manifest path."
-            )
-
-        _validate_split(data, manifest)
-        if export_format is not None:
-            export_split(data, manifest, path, export_format)
-        return manifest
-
-    manifest = make_split(
-        data,
-        validation_fraction=validation_fraction,
-        seed=seed,
-    )
-
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    with path.open("x", encoding="utf-8") as stream:
-        json.dump(manifest, stream, indent=2, ensure_ascii=False)
-        stream.write("\n")
-
-    if export_format is not None:
-        export_split(data, manifest, path, export_format)
-    return manifest
-
+def save_sparse_splits(data, folder):
+    folder = Path(folder)
+    folder.mkdir(parents=True, exist_ok=True)
+    folds = make_sparse_splits(data)
+    for target_cell, manifest in folds.items():
+        filename = {"NK cells": "nk", "T cells CD4+": "cd4", "T cells CD8+": "cd8", "T regulatory cells": "treg"}[target_cell]
+        (folder / f"sparse_cell_{filename}.json").write_text(
+            json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return folds
 
 def apply_split(data, manifest):
-    """Return train_df, val_df in saved pair order, preserving source columns.
-
-    Pair identities, rather than row positions, also support reordered source data.
-    """
-    _validate_split(data, manifest)
-    positions = {
-        pair: i for i, pair in enumerate(
-            data[PAIR_COLUMNS].itertuples(index=False, name=None)
-        )
-    }
-    return tuple(
-        data.iloc[[positions[tuple(p)] for p in manifest[key]]].copy()
-        for key in ("train_pairs", "validation_pairs")
-    )
-
-
-def export_split(data, manifest, manifest_path, file_format="parquet"):
-    """Export full split data; return paths keyed by 'train' and 'validation'.
-
-    Example: split.json -> split_train.parquet, split_validation.parquet.
-    CSV does not preserve pandas dtypes; use parquet for lossless round trips.
-    """
-    if file_format not in ("parquet", "csv"):
-        raise ValueError("file_format must be 'parquet' or 'csv'.")
-    train_df, val_df = apply_split(data, manifest)
-    manifest_path = Path(manifest_path)
-    manifest_path.parent.mkdir(parents=True, exist_ok=True)
-    paths = {}
-    for name, frame in (("train", train_df), ("validation", val_df)):
-        output = manifest_path.with_name(f"{manifest_path.stem}_{name}.{file_format}")
-        if file_format == "parquet":
-            frame.to_parquet(output, index=False)
-        else:
-            frame.to_csv(output, index=False)
-        paths[name] = output
-    return paths
+    positions = {pair: i for i, pair in enumerate(data[PAIR_COLUMNS].itertuples(index=False, name=None))}
+    return tuple(data.iloc[[positions[tuple(pair)] for pair in manifest[key]]].copy().reset_index(drop=True)
+                 for key in ("train_pairs", "validation_pairs"))
 
 
 def get_gene_columns(data):
