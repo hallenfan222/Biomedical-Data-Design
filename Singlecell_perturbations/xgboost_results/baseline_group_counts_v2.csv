@@ -1,0 +1,19 @@
+group,donor_id,cell_type,n_cells
+0,donor_0,B cells,1746
+1,donor_0,Myeloid cells,1395
+2,donor_0,NK cells,818
+3,donor_0,T cells CD4+,3489
+4,donor_0,T cells CD8+,202
+5,donor_0,T regulatory cells,180
+6,donor_1,B cells,1189
+7,donor_1,Myeloid cells,2548
+8,donor_1,NK cells,1487
+9,donor_1,T cells CD4+,2743
+10,donor_1,T cells CD8+,81
+11,donor_1,T regulatory cells,85
+12,donor_2,B cells,874
+13,donor_2,Myeloid cells,2931
+14,donor_2,NK cells,2192
+15,donor_2,T cells CD4+,3139
+16,donor_2,T cells CD8+,225
+17,donor_2,T regulatory cells,227

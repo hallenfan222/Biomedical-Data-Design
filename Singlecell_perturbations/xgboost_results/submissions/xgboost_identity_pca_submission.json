@@ -1,0 +1,21 @@
+{
+  "params": {
+    "n_estimators": 120,
+    "max_depth": 3,
+    "learning_rate": 0.06,
+    "subsample": 0.9,
+    "colsample_bytree": 0.9,
+    "objective": "reg:squarederror",
+    "tree_method": "hist",
+    "device": "cpu",
+    "n_jobs": 2,
+    "random_state": 42,
+    "reg_lambda": 1.0,
+    "min_child_weight": 1.0,
+    "max_bin": 256
+  },
+  "pca_dim": 160,
+  "strategy": "one_output_per_tree",
+  "use_expression": false,
+  "use_pca": true
+}

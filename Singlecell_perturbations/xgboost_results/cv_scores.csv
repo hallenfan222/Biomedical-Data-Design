@@ -1,0 +1,5 @@
+model,fold,cell_type,n_validation,MRRMSE,seconds
+identity_pca,0,NK cells,129,1.1462071183859115,2.416757899991353
+identity_pca,1,T cells CD4+,129,1.0192610308457708,2.1043751999968663
+identity_pca,2,T cells CD8+,127,0.8468826196988951,2.072604600005434
+identity_pca,3,T regulatory cells,129,1.0719876109994313,2.2766402999986894
