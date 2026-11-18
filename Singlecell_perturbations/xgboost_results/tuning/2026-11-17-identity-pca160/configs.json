@@ -1,0 +1,141 @@
+[
+  {
+    "id": "T00",
+    "stage": "baseline",
+    "rationale": "Original baseline; fixed identity/PCA160/seed42/one_output_per_tree",
+    "overrides": {}
+  },
+  {
+    "id": "T01",
+    "stage": "structure",
+    "rationale": "Depth-only contrast to T00",
+    "overrides": {
+      "max_depth": 2
+    }
+  },
+  {
+    "id": "T02",
+    "stage": "structure",
+    "rationale": "Depth-only contrast to T00",
+    "overrides": {
+      "max_depth": 4
+    }
+  },
+  {
+    "id": "T03",
+    "stage": "structure",
+    "rationale": "Child-weight-only contrast to T00",
+    "overrides": {
+      "min_child_weight": 4
+    }
+  },
+  {
+    "id": "T04",
+    "stage": "structure",
+    "rationale": "Child-weight-only contrast to T00",
+    "overrides": {
+      "min_child_weight": 8
+    }
+  },
+  {
+    "id": "T05",
+    "stage": "structure",
+    "rationale": "L2-only contrast to T00",
+    "overrides": {
+      "reg_lambda": 0.1
+    }
+  },
+  {
+    "id": "T06",
+    "stage": "structure",
+    "rationale": "L2-only contrast to T00",
+    "overrides": {
+      "reg_lambda": 10
+    }
+  },
+  {
+    "id": "T07",
+    "stage": "structure",
+    "rationale": "L2-only contrast to T00",
+    "overrides": {
+      "reg_lambda": 30
+    }
+  },
+  {
+    "id": "T08",
+    "stage": "combined_structure",
+    "rationale": "Combine depth4 and lambda0.1 after each improved separately; retain child1 because child4/8 worsened.",
+    "overrides": {
+      "max_depth": 4,
+      "reg_lambda": 0.1
+    }
+  },
+  {
+    "id": "T09",
+    "stage": "rate_rounds",
+    "rationale": "Fixed T08 structure; compare learning-rate/rounds pair without early stopping.",
+    "overrides": {
+      "max_depth": 4,
+      "reg_lambda": 0.1,
+      "learning_rate": 0.03,
+      "n_estimators": 300
+    }
+  },
+  {
+    "id": "T10",
+    "stage": "rate_rounds",
+    "rationale": "Fixed T08 structure; compare learning-rate/rounds pair without early stopping.",
+    "overrides": {
+      "max_depth": 4,
+      "reg_lambda": 0.1,
+      "learning_rate": 0.06,
+      "n_estimators": 300
+    }
+  },
+  {
+    "id": "T11",
+    "stage": "rate_rounds",
+    "rationale": "Fixed T08 structure; compare learning-rate/rounds pair without early stopping.",
+    "overrides": {
+      "max_depth": 4,
+      "reg_lambda": 0.1,
+      "learning_rate": 0.03,
+      "n_estimators": 600
+    }
+  },
+  {
+    "id": "T12",
+    "stage": "rate_rounds",
+    "rationale": "Fixed T08 structure; compare learning-rate/rounds pair without early stopping.",
+    "overrides": {
+      "max_depth": 4,
+      "reg_lambda": 0.1,
+      "learning_rate": 0.1,
+      "n_estimators": 120
+    }
+  },
+  {
+    "id": "T13",
+    "stage": "sampling",
+    "rationale": "Single sampling change from T09: subsample 0.9 to 0.7.",
+    "overrides": {
+      "max_depth": 4,
+      "reg_lambda": 0.1,
+      "learning_rate": 0.03,
+      "n_estimators": 300,
+      "subsample": 0.7
+    }
+  },
+  {
+    "id": "T14",
+    "stage": "sampling",
+    "rationale": "Single sampling change from T09: colsample_bytree 0.9 to 0.7.",
+    "overrides": {
+      "max_depth": 4,
+      "reg_lambda": 0.1,
+      "learning_rate": 0.03,
+      "n_estimators": 300,
+      "colsample_bytree": 0.7
+    }
+  }
+]

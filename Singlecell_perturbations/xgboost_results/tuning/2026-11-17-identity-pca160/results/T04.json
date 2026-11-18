@@ -1,0 +1,112 @@
+{
+  "id": "T04",
+  "stage": "structure",
+  "rationale": "Child-weight-only contrast to T00",
+  "params": {
+    "n_estimators": 120,
+    "max_depth": 3,
+    "learning_rate": 0.06,
+    "min_child_weight": 8,
+    "subsample": 0.9,
+    "colsample_bytree": 0.9,
+    "reg_lambda": 1.0,
+    "objective": "reg:squarederror",
+    "tree_method": "hist",
+    "device": "cuda",
+    "n_jobs": 2,
+    "random_state": 42,
+    "max_bin": 256,
+    "multi_strategy": "one_output_per_tree"
+  },
+  "pca_dim": 160,
+  "context": {
+    "job_id": "55819987",
+    "host": "exp-8-59",
+    "utc": "2026-11-17T23:57:11Z",
+    "data_sha256": "b5fa2f763dd98b7662ec8819209cf97e68022e33a575df77d43d1153f7c5ac76",
+    "runner_sha256": "3b40ca9de26c07c43b8bfc8e1690dace334dfe1e151d920be7bbd2576c7e4f3d",
+    "split_sha256": "9382ee380bda100262a48010e3a8d7893b7d6dfd0a0c18db60f193d4b332746d",
+    "xgboost": "3.2.0",
+    "numpy": "1.26.4",
+    "gpu": "GPU 0: Tesla V100-SXM2-32GB (UUID: GPU-bbcc323c-1174-c628-1001-f1a602e0cea9)",
+    "cuda_visible_devices": "0"
+  },
+  "status": "complete",
+  "folds": [
+    {
+      "fold": "NK",
+      "n_train": 485,
+      "n_validation": 129,
+      "n_genes": 18211,
+      "input_dim": 152,
+      "mrrmse": 2.485468358373656,
+      "fit_seconds": 6.78939474420622,
+      "model_seconds": 7.201144115999341,
+      "preprocess_seconds": 0.9190233140252531,
+      "device": "cuda:0",
+      "prediction_shape": [
+        129,
+        18211
+      ],
+      "peak_process_gpu_mib": 432.0,
+      "gpu_samples": 14
+    },
+    {
+      "fold": "CD4",
+      "n_train": 485,
+      "n_validation": 129,
+      "n_genes": 18211,
+      "input_dim": 152,
+      "mrrmse": 1.749789700557582,
+      "fit_seconds": 6.829306888859719,
+      "model_seconds": 7.2368367509916425,
+      "preprocess_seconds": 0.8545037591829896,
+      "device": "cuda:0",
+      "prediction_shape": [
+        129,
+        18211
+      ],
+      "peak_process_gpu_mib": 432.0,
+      "gpu_samples": 14
+    },
+    {
+      "fold": "CD8",
+      "n_train": 487,
+      "n_validation": 127,
+      "n_genes": 18211,
+      "input_dim": 152,
+      "mrrmse": 0.9316314094919381,
+      "fit_seconds": 6.834525047801435,
+      "model_seconds": 7.277550159953535,
+      "preprocess_seconds": 0.6991675500757992,
+      "device": "cuda:0",
+      "prediction_shape": [
+        127,
+        18211
+      ],
+      "peak_process_gpu_mib": 432.0,
+      "gpu_samples": 14
+    },
+    {
+      "fold": "Treg",
+      "n_train": 485,
+      "n_validation": 129,
+      "n_genes": 18211,
+      "input_dim": 152,
+      "mrrmse": 1.70962796712853,
+      "fit_seconds": 6.820503870025277,
+      "model_seconds": 7.241028575692326,
+      "preprocess_seconds": 0.7456587478518486,
+      "device": "cuda:0",
+      "prediction_shape": [
+        129,
+        18211
+      ],
+      "peak_process_gpu_mib": 432.0,
+      "gpu_samples": 14
+    }
+  ],
+  "mean_mrrmse": 1.7191293588879266,
+  "model_total_seconds": 30.0287700118497,
+  "total_with_preprocess_seconds": 33.24712401907891
+}

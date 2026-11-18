@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "unique_configs": 15,
+  "complete_folds": 60,
+  "same_source_and_data": true,
+  "all_cuda": true,
+  "smoke_matches_baseline_NK": true,
+  "jobs": [
+    "55819987",
+    "55820238",
+    "55820747"
+  ]
+}
