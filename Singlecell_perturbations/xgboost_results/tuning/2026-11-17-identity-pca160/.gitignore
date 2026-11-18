@@ -1,0 +1,10 @@
+# Local reproduction artifacts must not become research results by accident.
+data/
+reproduction-*/
+gpu-run.lock
+__pycache__/
+*.pyc
+slurm-*.out
+logs/[0-9]*.log
+!logs/*.excerpt.log
+reports/report.html
