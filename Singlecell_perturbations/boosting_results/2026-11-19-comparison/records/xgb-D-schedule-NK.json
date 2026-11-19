@@ -1,0 +1,35 @@
+{
+  "lib": "xgb",
+  "design": "D",
+  "stage": "schedule",
+  "fold": "NK",
+  "params": {
+    "n_estimators": 300,
+    "max_depth": 4,
+    "learning_rate": 0.03,
+    "min_child_weight": 1.0,
+    "subsample": 0.9,
+    "colsample_bytree": 0.9,
+    "reg_lambda": 0.1,
+    "objective": "reg:squarederror",
+    "tree_method": "hist",
+    "device": "cuda",
+    "n_jobs": 2,
+    "random_state": 42,
+    "max_bin": 256,
+    "multi_strategy": "one_output_per_tree"
+  },
+  "overrides": {
+    "max_depth": 4,
+    "reg_lambda": 0.1,
+    "learning_rate": 0.03,
+    "n_estimators": 300
+  },
+  "mrrmse": 1.0968218219799841,
+  "seconds": 92.77155278204009,
+  "total_seconds": 93.95670811203308,
+  "peak": 502.0,
+  "n_input": 22939,
+  "n_output": 160,
+  "job": "55870938"
+}

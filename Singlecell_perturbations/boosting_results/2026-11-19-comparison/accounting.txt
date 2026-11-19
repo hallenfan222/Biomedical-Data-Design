@@ -1,0 +1,4 @@
+JobID             State    Elapsed ElapsedRaw                                                                                  AllocTRES 
+------------ ---------- ---------- ---------- ------------------------------------------------------------------------------------------ 
+55870938         FAILED   01:06:33       3993                                              billing=3600,cpu=10,gres/gpu=1,mem=96G,node=1 
+55873673      COMPLETED   00:50:09       3009                                              billing=3600,cpu=10,gres/gpu=1,mem=96G,node=1 

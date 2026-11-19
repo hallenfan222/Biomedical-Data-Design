@@ -1,0 +1,9 @@
+library,design,attempted,complete
+xgb,A,1,1
+xgb,B,3,3
+xgb,C,1,0
+xgb,D,3,3
+pyboost,A,1,1
+pyboost,B,3,3
+pyboost,C,1,0
+pyboost,D,3,3
