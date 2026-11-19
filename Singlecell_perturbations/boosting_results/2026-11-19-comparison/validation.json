@@ -1,0 +1,16 @@
+[
+  {
+    "file": "xgb-final.csv",
+    "rows": 255,
+    "genes": 18211,
+    "sha256": "73d7e82a274362fc67cc456cf3174c906c002d3525dd968f5ce161f92a47bba9",
+    "validated": true
+  },
+  {
+    "file": "pyboost-final.csv",
+    "rows": 255,
+    "genes": 18211,
+    "sha256": "834c7d79b3cacebf4b3e7d8f961f4b880d0b713d23c86343d0c3f3ac8aee3cca",
+    "validated": true
+  }
+]

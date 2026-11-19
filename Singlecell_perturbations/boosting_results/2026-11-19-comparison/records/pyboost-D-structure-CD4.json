@@ -1,0 +1,29 @@
+{
+  "lib": "pyboost",
+  "design": "D",
+  "stage": "structure",
+  "fold": "CD4",
+  "params": {
+    "loss": "mse",
+    "ntrees": 120,
+    "lr": 0.06,
+    "max_depth": 4,
+    "min_data_in_leaf": 1,
+    "subsample": 0.9,
+    "colsample": 0.9,
+    "lambda_l2": 1.0,
+    "es": 0,
+    "seed": 42,
+    "verbose": 10
+  },
+  "overrides": {
+    "max_depth": 4
+  },
+  "mrrmse": 1.0379230162707347,
+  "seconds": 78.58133477088995,
+  "total_seconds": 79.71630447299685,
+  "peak": 5630.0,
+  "n_input": 22939,
+  "n_output": 160,
+  "job": "55870938"
+}
